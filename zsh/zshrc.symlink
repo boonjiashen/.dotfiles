@@ -6,6 +6,7 @@ alias gitlog="git log --oneline --decorate --all --graph"
 alias jqless="jq -C | less -R"
 alias g="git"
 alias p="pachctl"
+alias vim="nvim"
 
 # shortcut to this dotfiles path is $ZSH
 export ZSH=$HOME/.dotfiles
