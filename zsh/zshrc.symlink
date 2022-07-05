@@ -1,3 +1,12 @@
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
+
+alias gitlog="git log --oneline --decorate --all --graph"
+alias jqless="jq -C | less -R"
+alias g="git"
+alias p="pachctl"
+
 # shortcut to this dotfiles path is $ZSH
 export ZSH=$HOME/.dotfiles
 
