@@ -7,11 +7,17 @@ LC_ALL=en_US.UTF-8
 
 test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
 
-alias gitlog="git log --oneline --decorate --all --graph"
+function gitlog {
+    GIT_PAGER='less -p"\(HEAD"' git log --oneline --graph --decorate --branches
+}
 alias jqless="jq -C | less -R"
 alias g="git"
+alias gco="git checkout"
 alias p="pachctl"
 alias vim="nvim"
+alias tf="terraform"
+alias tg="terragrunt"
+alias awsid="aws sts get-caller-identity"
 
 # shortcut to this dotfiles path is $ZSH
 export ZSH=$HOME/.dotfiles
@@ -63,3 +69,22 @@ zle -N up-line-or-beginning-search
 zle -N down-line-or-beginning-search
 bindkey "^[[A" up-line-or-beginning-search # Up
 bindkey "^[[B" down-line-or-beginning-search # Down
+
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
+# >>> conda initialize >>>
+# !! Contents within this block are managed by 'conda init' !!
+__conda_setup="$('/Users/jiashen.boon/miniconda3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
+if [ $? -eq 0 ]; then
+    eval "$__conda_setup"
+else
+    if [ -f "/Users/jiashen.boon/miniconda3/etc/profile.d/conda.sh" ]; then
+        . "/Users/jiashen.boon/miniconda3/etc/profile.d/conda.sh"
+    else
+        export PATH="/Users/jiashen.boon/miniconda3/bin:$PATH"
+    fi
+fi
+unset __conda_setup
+# <<< conda initialize <<<
