@@ -7,10 +7,16 @@ LC_ALL=en_US.UTF-8
 
 test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
 
+# jq -C ... | less -R
+# jq --color-output ... | less --RAW_CONTROL_CHARS
+# -C forces color output which overrides the default behavior that outputs monochrome output when not writing to stdout
+# -R enables color escape sequences
+alias jqless="jq -C | less -R"
+
 function gitlog {
     GIT_PAGER='less -p"\(HEAD"' git log --oneline --graph --decorate --branches
 }
-alias jqless="jq -C | less -R"
+
 alias g="git"
 alias gco="git checkout"
 alias p="pachctl"
