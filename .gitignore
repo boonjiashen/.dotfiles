@@ -1,5 +1,6 @@
 git/gitconfig.local.symlink
 .idea
+.install
 
 # Auto-compiled lua script
 neovim/nvim/plugin/packer_compiled.lua

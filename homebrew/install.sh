@@ -21,4 +21,8 @@ then
 
 fi
 
+# Install packages that I like
+brew install fzf   # https://github.com/junegunn/fzf#using-homebrew
+$(brew --prefix)/opt/fzf/install  # To install useful key bindings and fuzzy completion
+
 exit 0
