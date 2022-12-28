@@ -50,6 +50,7 @@ There's a few special files in the hierarchy.
 Run this:
 
 ```sh
+cd  # Some scripts assume that the repo is in ~/.dotfiles
 git clone https://github.com/holman/dotfiles.git ~/.dotfiles
 cd ~/.dotfiles
 script/bootstrap
