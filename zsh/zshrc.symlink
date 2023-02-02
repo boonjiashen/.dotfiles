@@ -17,13 +17,17 @@ function gitlog {
     GIT_PAGER='less -p"\(HEAD"' git log --oneline --graph --decorate --branches
 }
 
+function lsgitb { git branch | fzf }
+function lsgitf { git diff --name-only | fzf -m }
 alias g="git"
 alias gco="git checkout"
+function gcob { gco $(lsgitb) }
 alias p="pachctl"
 alias vim="nvim"
 alias tf="terraform"
 alias tg="terragrunt"
 alias awsid="aws sts get-caller-identity"
+alias bb="bazel build"
 
 # shortcut to this dotfiles path is $ZSH
 export ZSH=$HOME/.dotfiles
