@@ -1,0 +1,18 @@
+[core]
+	editor = subl -n -w
+[pager]
+    # git log jumps to HEAD
+	log = less --pattern='\\(HEAD'
+[difftool "sourcetree"]
+	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
+	path = 
+[filter "lfs"]
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+	required = true
+	clean = git-lfs clean -- %f
+[push]
+	default = simple
+# Local gitconfig takes precendence
+[include]
+    path = ~/.gitconfig.local

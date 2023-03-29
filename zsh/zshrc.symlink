@@ -14,7 +14,7 @@ test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell
 alias jqless="jq -C | less -R"
 
 function gitlog {
-    GIT_PAGER='less -p"\(HEAD"' git log --oneline --graph --decorate --branches
+    git log --oneline --graph --decorate --branches
 }
 
 function lsgitb { git branch | fzf }
