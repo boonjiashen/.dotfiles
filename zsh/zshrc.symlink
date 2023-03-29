@@ -13,15 +13,8 @@ test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell
 # -R enables color escape sequences
 alias jqless="jq -C | less -R"
 
-function gitlog {
-    git log --oneline --graph --decorate --branches
-}
-
-function lsgitb { git branch | fzf }
 function lsgitf { git diff --name-only | fzf -m }
 alias g="git"
-alias gco="git checkout"
-function gcob { gco $(lsgitb) }
 alias p="pachctl"
 alias vim="nvim"
 alias tf="terraform"

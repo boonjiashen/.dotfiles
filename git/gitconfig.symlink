@@ -1,3 +1,7 @@
+[alias]
+    lg = log --oneline --graph --decorate --branches
+    co = checkout
+    cob = !git checkout $( git branch | fzf )
 [core]
 	editor = subl -n -w
 [pager]
